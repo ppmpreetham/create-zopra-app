@@ -1,6 +1,6 @@
 [package]
-name = "{{ project-name }}"
-description = "{{ description }}"
+name = "{{project-name}}"
+description = "{{project-description}}"
 version = "0.1.0"
 edition = "2024"
 
