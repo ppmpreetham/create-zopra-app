@@ -1,5 +1,7 @@
 mod app;
 mod assets;
+mod components;
+mod config;
 
 use app::App;
 
@@ -9,15 +11,13 @@ use gpui_kit::*;
 
 fn main() {
   let app = gpui_kit::application().with_assets(AppAssets);
+  let config = config::Config::new();
 
-  app.run(|cx| {
+  app.run(move |cx| {
     gpui_kit::init(cx);
 
     let window_size = WindowOptions {
-      window_bounds: Some(WindowBounds::Maximized(Bounds {
-        origin: point(px(0.0), px(0.0)),
-        size: size(px(1920.0), px(1080.0)),
-      })),
+      window_bounds: Some(config.window_size),
       ..Default::default()
     };
 
