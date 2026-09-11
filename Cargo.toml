@@ -1,0 +1,10 @@
+[package]
+name = "{{ project-name }}"
+description = "{{ description }}"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+gpui-kit = "0.6"
+rust-embed = "8"
+anyhow = "1"
