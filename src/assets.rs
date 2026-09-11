@@ -9,22 +9,22 @@ pub struct AppAssets;
 
 // TODO: make zopra do this later
 impl AssetSource for AppAssets {
-    fn load(&self, path: &str) -> Result<Option<Cow<'static, [u8]>>> {
-        if let Some(file) = AppAssets::get(path) {
-            return Ok(Some(file.data));
-        }
-
-        Assets.load(path)
+  fn load(&self, path: &str) -> Result<Option<Cow<'static, [u8]>>> {
+    if let Some(file) = AppAssets::get(path) {
+      return Ok(Some(file.data));
     }
 
-    fn list(&self, path: &str) -> Result<Vec<SharedString>> {
-        let mut files = AppAssets::iter()
-            .filter(|file| file.starts_with(path))
-            .map(SharedString::from)
-            .collect::<Vec<_>>();
+    Assets.load(path)
+  }
 
-        files.extend(Assets.list(path)?);
+  fn list(&self, path: &str) -> Result<Vec<SharedString>> {
+    let mut files = AppAssets::iter()
+      .filter(|file| file.starts_with(path))
+      .map(SharedString::from)
+      .collect::<Vec<_>>();
 
-        Ok(files)
-    }
+    files.extend(Assets.list(path)?);
+
+    Ok(files)
+  }
 }
