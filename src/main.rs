@@ -3,11 +3,17 @@ mod assets;
 mod components;
 mod config;
 
-use app::App;
-
 use assets::AppAssets;
 use gpui_kit::component::Root;
 use gpui_kit::*;
+use app::app;
+
+pub struct Main;
+impl Render for Main {
+  fn render(&mut self, window: &mut Window, cx: &mut Context<Self>) -> impl IntoElement {
+    app(window, cx)
+  }
+}
 
 fn main() {
   let app = gpui_kit::application().with_assets(AppAssets);
@@ -22,7 +28,7 @@ fn main() {
     };
 
     cx.open_window(window_size, |window, cx| {
-      let view = cx.new(|_| App);
+      let view = cx.new(|_| Main);
       cx.new(|cx| Root::new(view, window, cx))
     })
     .expect("failed to open window");

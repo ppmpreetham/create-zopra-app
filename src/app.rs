@@ -1,10 +1,9 @@
-use gpui_kit::{Context, IntoElement, ParentElement, Render, Window, div};
+use gpui_kit::*;
+use zopra::{component, hooks::use_state};
 
-pub struct App;
-
-impl Render for App {
-  // TODO: later make this use zopra
-  fn render(&mut self, _window: &mut Window, _cx: &mut Context<Self>) -> impl IntoElement {
-    div().child("Hello, GPUI!")
-  }
+#[component]
+pub fn app() {
+  let (user, set_user) = use_state("Hello User, Welcome to Zopra!");
+  set_user("HIII");
+  div().child(user())
 }
