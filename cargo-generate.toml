@@ -1,5 +1,8 @@
 [template]
 cargo_generate_version = ">=0.10.0"
+ignore = [
+    "LICENSE"
+]
 
 [placeholders]
 project-description = { type = "string", prompt = "Short description of the project", default = "An example generated using the Zopra template" }
