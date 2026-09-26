@@ -8,7 +8,7 @@ edition = "2024"
 gpui-kit = "0.6"
 rust-embed = "8"
 anyhow = "1"
-zopra = "0.1.111"
+zopra = "0.1.112"
 
 # dev profile optimized for fast compilation
 [profile.dev]
@@ -16,10 +16,11 @@ opt-level = 0 # no optimizations in dev mode
 debug = true # full debug symbols
 panic = "unwind" # allows stack unwinding
 
-[profile.dev.package."*"]
+# release profile optimized for performance
+
+[profile.release.package."*"]
 opt-level = 3 # External crates run at full speed so your app isn't sluggish
 
-# release profile optimized for performance
 [profile.release]
 opt-level = 3 # max runtime optimization
 codegen-units = 1 # no parallel blocks (better for performance)
