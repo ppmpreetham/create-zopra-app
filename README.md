@@ -9,7 +9,7 @@
 </h1>
 
 <p align="center">
-  Creates a clean [zopra](https://www.github.com/ppmpreetham/zopra) app.
+  Creates a clean zopra app.
 </p>
 
 ```bash

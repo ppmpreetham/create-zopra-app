@@ -8868,7 +8868,7 @@ checksum = "29666d0abbfad1e3dc4dcf6144730dd3a3ab225bbbdac83319345b1b44ccfc1b"
 
 [[package]]
 name = "zopra"
-version = "0.1.112"
+version = "0.1.113"
 dependencies = [
  "anyhow",
  "futures",
@@ -8882,7 +8882,7 @@ dependencies = [
 
 [[package]]
 name = "zopra-gpui-view"
-version = "0.1.111"
+version = "0.1.112"
 dependencies = [
  "proc-macro2",
  "quote",
