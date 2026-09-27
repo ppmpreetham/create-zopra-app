@@ -1,10 +1,10 @@
-mod app;
+﻿mod app;
 mod assets;
 mod components;
 mod config;
 
 use assets::AppAssets;
-use gpui_kit::component::Root;
+use gpui_kit::component::{Root, TitleBar};
 use gpui_kit::*;
 use app::app;
 
@@ -24,7 +24,7 @@ fn main() {
 
     let window_size = WindowOptions {
       window_bounds: Some(config.window_size),
-      ..Default::default()
+      ..TitleBar::window_options()
     };
 
     cx.open_window(window_size, |window, cx| {
@@ -35,3 +35,4 @@ fn main() {
     cx.activate(true);
   });
 }
+

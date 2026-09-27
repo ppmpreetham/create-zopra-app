@@ -1,6 +1,7 @@
-use gpui_kit::prelude::FluentBuilder;
+﻿use gpui_kit::prelude::FluentBuilder;
 use gpui_kit::*;
 use zopra::{component, hooks::use_state, view, cn};
+use crate::components::titlebar::{AppTitleBar, AppTitleBarProps};
 
 #[component]
 pub fn incrementer(number: i32) {
@@ -27,26 +28,29 @@ pub fn incrementer(number: i32) {
 #[component]
 pub fn app() {
     view! {
-        <div class="flex flex-col items-center justify-center size-full bg-[#0a0a0a] text-[#ededed] px-24">
-            <div class="flex items-center justify-center gap-6 mb-4">
-                <img src="Zopra.svg" class="size-20"/>
-                <div class="text-6xl font-bold">
-                    "ZOPRA"
+        <div class="flex flex-col size-full bg-[#0a0a0a] text-[#ededed]">
+            <AppTitleBar />
+            <div class="flex-1 flex flex-col items-center justify-center px-24">
+                <div class="flex items-center justify-center gap-6 mb-4">
+                    <img src="Zopra.svg" class="size-20"/>
+                    <div class="text-6xl font-bold">
+                        "ZOPRA"
+                    </div>
                 </div>
-            </div>
-            <div class="flex items-center mb-8 text-xl">
-                <span>"To get started, edit the"</span>
-                <kbd class="bg-[#181818] rounded-2xl mx-2 px-2">
-                    "src/app.rs"
-                </kbd>
-                <span>"file"</span>
-            </div>
-            <div class="flex items-center gap-6">
-                <div class="flex gap-[0.75rem] items-center justify-center w-40 border border-[#ededed] bg-[#ededed] text-[#0a0a0a] px-6 py-3 rounded-full cursor-pointer hover:bg-[#d4d4d8]">
-                    <span>"꩜"</span>
-                    <span>"Read Docs"</span>
+                <div class="flex items-center mb-8 text-xl">
+                    <span>"To get started, edit the"</span>
+                    <div class="bg-[#181818] rounded-2xl mx-2 px-2">
+                        "src/app.rs"
+                    </div>
+                    <span>"file"</span>
                 </div>
-                <Incrementer number={0} />
+                <div class="flex items-center gap-6">
+                    <div class="flex gap-[0.75rem] items-center justify-center w-40 border border-[#ededed] bg-[#ededed] text-[#0a0a0a] px-6 py-3 rounded-full cursor-pointer hover:bg-[#d4d4d8]">
+                        <span>"꩜"</span>
+                        <span>"Read Docs"</span>
+                    </div>
+                    <Incrementer number={0} />
+                </div>
             </div>
         </div>
     }
