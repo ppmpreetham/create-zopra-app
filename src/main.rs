@@ -1,4 +1,4 @@
-﻿mod app;
+mod app;
 mod assets;
 mod components;
 mod config;
@@ -7,6 +7,7 @@ use assets::AppAssets;
 use gpui_kit::component::{Root, TitleBar};
 use gpui_kit::*;
 use app::app;
+use gpui_kit::gpui::WindowBackgroundAppearance;
 
 pub struct Main;
 impl Render for Main {
@@ -14,6 +15,7 @@ impl Render for Main {
     app(window, cx)
   }
 }
+
 
 fn main() {
   let app = gpui_kit::application().with_assets(AppAssets);
@@ -24,6 +26,7 @@ fn main() {
 
     let window_size = WindowOptions {
       window_bounds: Some(config.window_size),
+      window_background: WindowBackgroundAppearance::Blurred,
       ..TitleBar::window_options()
     };
 

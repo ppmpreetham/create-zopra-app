@@ -1,7 +1,7 @@
-﻿use gpui_kit::prelude::FluentBuilder;
+use gpui_kit::prelude::FluentBuilder;
 use gpui_kit::*;
 use zopra::{component, hooks::use_state, view, cn};
-use crate::components::titlebar::{AppTitleBar, AppTitleBarProps};
+use crate::components::titlebar::AppTitleBar;
 
 #[component]
 pub fn incrementer(number: i32) {
@@ -55,3 +55,4 @@ pub fn app() {
         </div>
     }
 }
+

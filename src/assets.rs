@@ -28,3 +28,4 @@ impl AssetSource for AppAssets {
     Ok(files)
   }
 }
+

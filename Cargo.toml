@@ -5,7 +5,7 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-gpui-kit = "0.6"
+gpui-kit = "0.7"
 rust-embed = "8"
 anyhow = "1"
 zopra = "*"
@@ -28,3 +28,4 @@ lto = "fat" # LTO across all crates
 panic = "abort" # Removes unwinding code
 strip = true # strips debug symbols to slim down the binary
 debug = false # no debug symbols in release
+

@@ -1,4 +1,4 @@
-﻿use gpui_kit::prelude::FluentBuilder;
+use gpui_kit::prelude::FluentBuilder;
 use gpui_kit::*;
 use gpui_kit::component::TitleBar;
 use zopra::{component, view};
@@ -16,3 +16,4 @@ pub fn app_title_bar() {
         </TitleBar>
     }
 }
+
